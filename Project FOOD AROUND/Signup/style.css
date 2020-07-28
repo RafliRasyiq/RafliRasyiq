@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Noto+Sans&family=Open+Sans:wght@400;700&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+.header {
+	height: 100vh;
+	background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(image.jpg);
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: sans-serif;
+}
+
+.container{
+	position: relative;
+	width: 390px;
+	background: white;
+	padding: 60px 40px;
+	text-align: center;
+	border-radius: 5px;
+}
+
+header{
+	font-size: 40px;
+	margin-bottom: 60px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+input:focus{
+	border: 1px solid #1da1f2;
+}
+
+.input-field, form .button{
+	margin: 25px 0;
+	position: relative;
+	height: 50px;
+	width: 100%;
+}
+
+.input-field input{
+	height: 100%;
+	width: 100%;
+	border: 1px solid silver;
+	padding-left: 15px;
+	outline: none;
+	font-size: 19px;
+	transition: 0.4s;
+}
+
+.input-field label, span.show{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.input-field label{
+	left: 15px;
+	pointer-events: none;
+	color: grey;
+	font-size: 18px;
+	transition: 0.4s;
+}
+span.show{
+	right: 20px;
+	color: #111;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+	user-select: none;
+	visibility: hidden;
+	font-family: 'Open Sans', sans-serif;
+}
+input:valid ~ span.show{
+	visibility: visible;
+}
+input:focus{
+	border: 1px solid #1da1f2;
+}
+
+input:focus ~ label,
+input:valid ~ label{
+	transform: translateY(-33px);
+	background: white;
+	font-size: 16px;
+	color: #1da1f2;
+}
+
+form .button{
+	margin-top: 30px;
+	overflow: hidden;
+	z-index:111;
+}
+
+.button .inner{
+	position: absolute;
+	height: 100%;
+	width: 300%;
+	left: -100%;
+	z-index: -1;
+	transition: all 0.4s;
+	background:-webkit-linear-gradient(right,#151d22,#382c32,#4a3a43,#5d4954);
+}
+.button:hover .inner{
+	left: 0;
+}  
+.button button{
+	width: 100%;
+	height: 100%;
+	border: none;
+	background: none;
+	outline: none;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.signup{
+	margin-top: 50px;
+	font-family: 'Noto Sans', sans-serif;
+}
+.signup a{
+	color: #3498db;
+	text-decoration: none;
+}
+
+.signup a:hover{
+	text-decoration: underline;
+}
+
+.login{
+	margin-top: 50px;
+	font-family: 'Noto Sans', sans-serif;
+}
+.login a{
+	color: #3498db;
+	text-decoration: none;
+}
+
+.login a:hover{
+	text-decoration: underline;
+}
+
+/*CSS gender dll */
+
+#gender {
+	color: black;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	text-align: left;
+}
+
+#gender select {
+	float: right;
+	width: 193px;
+}
+
+#birth {
+	color: black;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: left;
+}
+
+#birth input[type="datetime-local"] {
+	float: right;
+}
+
+.accept {
+	color: black;
+	margin-bottom: 5px;
+	padding-top: 10px;
+	font-size: 13px;
+	padding-left: 5px;
+	text-align: left;
+}
+
+/*css navbar */
+
+nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 8vh;
+	background-color: #5d4954;
+	font-family: 'Poppins', sans-serif;
+}
+
+.logo{
+	color: rgb(226,226,226);
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size: 20px;
+}
+
+.nav-links{
+	display: flex;
+	justify-content: space-around;
+	width: 25%;
+}
+
+.nav-links li{
+	list-style: none;
+}
+
+.nav-links a{
+	color: rgb(226,226,226);
+	text-decoration: none;
+	letter-spacing: 3px;
+	font-weight: bold;
+	font-size: 14px;
+}
+.burger{
+	display: none;
+	cursor: pointer;
+}
+
+.burger div{
+	width: 25px;
+	height: 3px;
+	background-color: rgb(226,226,226);
+	margin: 5px;
+	transition: all 0.3s ease;
+}
+@media screen and(max-width:1024px){
+	.nav-links{
+		width: 60%;
+	}
+}
+ 
+@media screen and (max-width:768px){
+	body{
+		overflow-x: hidden;
+	}
+	.nav-links{
+		position: absolute;
+		right:0px;
+		height: 92vh;
+		top:8vh;
+		background-color: #5d4954;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 50%;
+		transform: translateX(100%);
+		transition: transform 0.5 ease-in;
+	}
+	.nav-links li{
+		opacity: 0;
+	}
+	.burger{
+		display: block;
+	}
+}
+
+.nav-active{
+	transform: translateX(0%);
+}
+
+@keyframes navLinkfade{
+	from{
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	to{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+.toggle .line1{
+	transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+	opacity: 0;
+}
+.toggle .line3{
+	transform: rotate(45deg) translate(-5px,-6px);
+}
+
+
+
+
